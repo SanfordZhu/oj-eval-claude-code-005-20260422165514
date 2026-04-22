@@ -167,7 +167,7 @@ bool QoiDecode(uint32_t &width, uint32_t &height, uint8_t &channels, uint8_t &co
                 g = static_cast<uint8_t>(static_cast<int>(g) + dg);
                 b = static_cast<uint8_t>(static_cast<int>(b) + dg + db_dg);
             } else if ((b1 & QOI_MASK_2) == QOI_OP_RUN_TAG) {
-                run = (b1 & 0x3f) + 1;
+                run = (b1 & 0x3f);
             }
         }
 
