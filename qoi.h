@@ -80,17 +80,11 @@ bool QoiEncode(uint32_t width, uint32_t height, uint8_t channels, uint8_t colors
                         uint8_t b2 = static_cast<uint8_t>(((dr_dg + 8) << 4) | (db_dg + 8));
                         QoiWriteU8(b1);
                         QoiWriteU8(b2);
-                    } else if (channels == 3) {
+                    } else {
                         QoiWriteU8(QOI_OP_RGB_TAG);
                         QoiWriteU8(r);
                         QoiWriteU8(g);
                         QoiWriteU8(b);
-                    } else {
-                        QoiWriteU8(QOI_OP_RGBA_TAG);
-                        QoiWriteU8(r);
-                        QoiWriteU8(g);
-                        QoiWriteU8(b);
-                        QoiWriteU8(a);
                     }
                 } else {
                     QoiWriteU8(QOI_OP_RGBA_TAG);
